@@ -1,0 +1,10 @@
+[Unit]
+Description=Wayland Mouse Mapper
+
+[Service]
+User=mapper
+ExecStart=/usr/local/bin/wayland-mapper.js
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

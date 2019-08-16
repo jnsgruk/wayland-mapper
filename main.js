@@ -37,7 +37,7 @@ const exec = command => {
   return result
 }
 
-const events = exec(`stdbuf -oL libinput debug-events --show-keycodes`)
+const events = exec(`stdbuf -oL libinput debug-events`)
 
 const pressKeys = keys => {
   keys.map(key => {
