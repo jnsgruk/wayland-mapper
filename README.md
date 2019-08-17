@@ -19,7 +19,7 @@ Some useful commands for understanding your setup are:
 
 ```bash
 $ sudo cp ./main.js /usr/local/bin/wayland-mapper.js
-$ sudo useradd -M -s /sbin/nologin -g input mapper
+$ sudo useradd -r -M -s /sbin/nologin -g input mapper
 $ sudo cp ./wayland-mapper.service /etc/systemd/system/wayland-mapper.service
 $ sudo systemctl enable --now wayland-mapper
 ```
