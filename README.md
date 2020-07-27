@@ -17,6 +17,8 @@ Some useful commands for understanding your setup are:
 
 ### Install as a service
 
+Be sure to adjust the Environment directives in the systemd service file to match your particular setup!
+
 ```bash
 $ sudo cp ./main.js /usr/local/bin/wayland-mapper.js
 $ sudo useradd -r -M -s /sbin/nologin -g input mapper

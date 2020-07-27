@@ -2,7 +2,14 @@
 Description=Wayland Mouse Mapper
 
 [Service]
+After=graphical.target
 User=mapper
+#Environment=MAPPER_MOUSE=event17
+Environment=MAPPER_MOUSE_NAME="Corsair CORSAIR HARPOON RGB WIRELESS Gaming Dongle"
+#Environment=MAPPER_KEYBOARD=event18
+Environment=MAPPER_KEYBOARD_NAME="Hoksi Technology DURGOD Taurus K320"
+#Environment=MAPPER_TOUCHPAD=event19
+#Environment=MAPPER_TOUCHPAD_NAME="Some Touchpad Name"
 ExecStart=/usr/local/bin/wayland-mapper.js
 Type=simple
 
