@@ -12,6 +12,8 @@ Environment=MAPPER_KEYBOARD_NAME="Hoksi Technology DURGOD Taurus K320"
 #Environment=MAPPER_TOUCHPAD_NAME="Some Touchpad Name"
 ExecStart=/usr/local/bin/wayland-mapper.js
 Type=simple
+Restart=always
+RestartSec=15
 
 [Install]
 WantedBy=multi-user.target
