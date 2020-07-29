@@ -4,13 +4,17 @@ const { spawnSync, spawn } = require("child_process")
 
 console.log("Starting Wayland mapper...")
 
+// Escape any special characters in string that might interfere with regexp composition
+const escapeRegex = (string) => string.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&")
+
 const getDevice = (eventSource, deviceName) => {
   if (process.env[eventSource]) {
     // If setting device by env var with "/dev/input/eventX"
     return process.env[eventSource]
   } else if (process.env[deviceName]) {
     // Else search for event number using RegEx and device name
-    const r = new RegExp(`${process.env[deviceName]}\\nKernel:\\s+(.+)`, "g")
+    const escName = escapeRegex(process.env[deviceName])
+    const r = new RegExp(`${escName}\\nKernel:\\s+(.+)`, "g")
     // Get the output of libinput list-devices
     const result = spawnSync("libinput", ["list-devices"])
     if (result.stderr.toString().length > 0) {
